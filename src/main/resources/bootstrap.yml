@@ -1,0 +1,17 @@
+---
+spring:
+  application:
+    name: sample-product
+  cloud:
+    config:
+      enabled: true
+      discovery:
+        enabled: true
+        serviceId: SAMPLE-DYNAMICCONFIG
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port:8080}
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
